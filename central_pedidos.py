@@ -58,13 +58,12 @@ print(
     principal["estoque"]
 )
 
-trabalhadores =[ 
-        threading.Thread(
-            target=processar_pedido
-            args=(numero,)
-        )
-          
-        for numero in [101, 102, 103]
+trabalhadores = [
+    threading.Thread(
+        target=processar_pedido,
+        args=(numero,)
+    )
+    for numero in [101,102,103]
 ]
 
 pedidos_confirmados =[]
@@ -111,11 +110,11 @@ print(
 
 trabalhadores = [
     threading.Thread(
-        target=processar_pedido
+        target=processar_pedido,
         args=(numero,)
     )
-    for numero in [101, 102, 103]
-    ]
+    for numero in [101,102,103]
+]
 
 for trabalhador in trabalhadores:
     trabalhador.start()
